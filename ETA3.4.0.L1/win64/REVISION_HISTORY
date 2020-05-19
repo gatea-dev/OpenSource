@@ -1,0 +1,141 @@
+(C) Copyright (C) 2019 Refinitiv. All rights reserved.
+
+RELEASE HISTORY PRIOR TO ESDK 1.2.0
+==========================================================
+
+Refer to Cpp-C/CHANGELOG for release history starting with ETA 3.2.0 (ESDK 1.2.0).
+
+--------------------------------
+eta3.1.1.L1.win.rrg
+--------------------------------
+
+[ESDK-169] - Watchlist Consumer is unable to recover tunnel stream connection when 
+             VAProvider is restarted
+[ESDK-237] - Reactor should copy RDMMsgs supplied on ChannelRole
+[ESDK-554] - Fix ETA C tunnel stream unit test failures
+[ESDK-616] - Reactor may crash if channel is closed immediately after submitting a message
+[ESDK-300] - TunnelStream: Cant send message larger than recvWindowSize
+[ESDK-626] - ETAC ioctl() returns incorrect value when setting invalid Compressthreshold value
+[ESDK-140] - Consumer requesting item with blank name causes core dump
+[ESDK-141] - VAProvider intermittently fails to apply payload to cache
+
+--------------------------------
+eta3.1.0.L1.win.rrg
+--------------------------------
+
+[ETA-1812] - rsslClearRDMLoginStatus() function incorrect
+[ETA-2037] - DOC: Reissues vs. AcceptingRequests
+[ETA-2611] - ETA C tunnel stream doesn't handle submission of non-queue messages
+[ETA-2680] - ETAC VAConsumer prints invalid characters to screen when rsslReactorSubmit fails
+[ETA-2685] - The Authentication Extended XML output is incorrect for rsslConsumer 
+             and rsslNIProvider
+[ETA-2839] - ETAC: Login Response parsing is incorrectly erroring out when a nametype is present
+[ETA-2321] - Reactor (C): Use poll() instead of select() for notification
+[ETA-2406] - Design and implement ETAC reactor and reactor watchlist extensions for Authentication
+[ETA-2428] - Update RDM Usage Guide (ETA) for TREP Authentication
+[ETA-2456] - Update RDM Usage Guide template for time series
+[ETA-2527] - Tunnel stream layer fragmentation
+[ETA-2528] - Tunnel stream layer fragmentation
+[ETA-2574] - ValueAdd deep copy of connect opts is not setting encryption options
+[ETA-2593] - CaseID: 04967973, 04974333: Add 
+             EncodeIterator.setGenericMessageCompleteFlag()/rsslGenericMsgSetMessageCompleteFlag()
+[ETA-2598] - Veracode scans for next release
+[ETA-2613] - CaseId: 04986557 Reactor crashes when connection is down
+[ETA-2660] - Provider example can't encode latest enumtype.def
+[ETA-2853] - Update API Concepts guide to correct Load Balancing feature info
+[ETA-2861] - Windows 10 Qualification
+[ETA-2872] - ETA Dev Guide update for TREP Authentication (Doc)
+[ETA-2898] - rsslVAProvider does not send COMPLETE flag in MarketByPrice refresh
+[ESDK-325] - CaseId: 05185824 Broken link in ETA RefMan
+[ESDK-284] - CaseId: 05185824 Error in UPA/ETA Dev Guide
+
+
+--------------------------------
+eta3.0.3.L1.win.rrg
+--------------------------------
+
+[ETA-1703] - Training Example clean up for C
+[ETA-2297] - Spelling error in Source Mirroring element name
+[ETA-2380] - Reserve domains for FORECAST_DATA
+[ETA-2388] - Run products through Veracode scans
+[ETA-2398] - Add MARKET_BY_TIME as domain 37
+[ETA-2276] - ETAC Package Doc: Broken links in VAProductOverviewETA.htm
+[ETA-2391] - CaseID: 04737147 - disable xmlTrace mid-run causing seg fault
+
+--------------------------------
+eta3.0.2.L1.win.rrg
+eta3.0.2.L1.win-binaries.rrg
+--------------------------------
+
+[ETA-750] - Tunneling command line arguments are inconsistent between UPAC & UPAJ
+[ETA-1567] - Watchlist: Off-Stream PostAck messages do not include StreamInfo
+[ETA-1712] - RDMUsageGuide missing Directory.ServiceFilterFlags.SEQ_MCAST in 
+             Source Directory Request Message Member Use table
+[ETA-1725] - CaseId: 04070094 Random crashes in a WinInet worker thread
+[ETA-1753] - [ETA Binary Pack] This is missing Utils/Dacs/Libs and Utils/Ansi/Libs
+[ETA-1762] - EncodeIterator allows summaryData flag with 0 length summary data
+[ETA-1766] - SR: 04152320 DOC: Enhance documentation for updateTypes
+[ETA-1837] - RMTES bug: tab characters are causing an infinite loop
+[ETA-1908] - DOC: RDMUsageGuide: Status should be applied before merge
+[ETA-1987] - [ UPAC Documentation ] TransportAPI_Portal.html points to Docs/WebDocs/indexETA.hml 
+             which does not exist
+[ETA-2080] - Watchlist (C): Directory update coming after item status on connection down
+[ETA-2082] - Reactor (C): Worker thread may fail if application closes a reconnecting channel
+[ETA-2135] - Example warnings from package builds
+[ETA-2242] - UPAC/RSSL: Impl/Reactor/rtr/rsslReactorImpl.h(214): 
+             warning C4309: '=' : truncation of constant value
+[ETA-1448] - Consider exposing Component Version string setting through UPA
+[ETA-1680] - Add new datatype in UPA C and UPAJ for JSON
+[ETA-1683] - Reactor Performance Tools: Interactive Provider
+[ETA-1684] - Reactor Performance Tools: Non Interactive Provider
+[ETA-1687] - VA RDM/Watchlist: Consider supporting Login/Directory generic messages
+[ETA-1748] - ETA-C Watchlist: RSSL_RQMF_MSG_KEY_IN_UPDATES should apply only to updates
+[ETA-1825] - Port to Visual Studio 2015
+[ETA-1828] - Remove unneeded tunnel stream files
+[ETA-1847] - Expose ability to set and retrieve sequence number for multicast transport
+[ETA-1921] - Add new domains for Economic Indicators and Polls
+[ETA-1980] - Type-O in RsslPrimitiveType doxygen
+[ETA-1991] - Watchlist (C): Disconnect in response to Login ClosedRecover
+[ETA-2093] - Wininet tunneling reports warnings on shutdown
+[ETA-2153] - Watchlist (C): Off-stream posts are not tracked
+[ETA-2262] - Update Shipped Dictionary Version
+[ETA-1723] - Case 04525657: RMTES incorrect handling in some character sets
+[ETA-1552] - Reactor Performance Tools: Consumer
+[ETA-2199] - Increase dictionary buffer sizes for VAProvider example 
+[ETA-2172] - Fix Reactor Worker clearing/setting an invalid file descriptor. 
+[ETA-1569] - Reactor/Watchlist: When channel is disconnected, provide login status event 
+             if stream is established.
+[ETA-1955] - Fix performance tool threadId printout across platforms
+[ETA-1935] - Fix build warnings in examples
+[ETA-1856] - Fix Provider_VS120.sln that pulls in VS110 project
+
+--------------------------------
+eta3.0.1.L1.win.rrg
+eta3.0.1.L1.win-binaries.rrg
+--------------------------------
+
+[ETA-1448] - Expose option to allow users to set Component Version string through ETA
+[ETA-1619] - Corrupt set definition encoding could cause decoder to abort
+[ETA-1680] - Add new datatype in ETA C for JSON
+[ETA-1693] - Reactor appears to ping timeout when ADS ping set to 3 or less
+[ETA-1694] - TunnelStreams: check for sending PossibleDuplicate messages is incorrect
+[ETA-1695] - Error conditions in the RMTES parser should be correctly returning 
+             BUFFER_TOO_SMALL instead of FAILURE.
+[ETA-1712] - DOC: RDMUsageGuide missing Directory.ServiceFilterFlags.SEQ_MCAST in Source 
+             Directory Request Message Member Use table
+[ETA-1723] - RMTES is not handling 0x7F characters properly and the UCS2 To UTF8 conversion 
+             can overflow.
+[ETA-1752] - Add "runtime" or "-r" into all C-Edition training modules
+[ETA-1766] - SR: 04152320 DOC: Enhance RDM Usage Guide documentation for updateTypes
+[UPAC-588] - [ETA Package 3.0] Invalid dictionary symlinks for Training examples & regular Examples
+[UPAC-589] - [ETA Package 3.0, Windows, VS* ] Solution file in some Training examples does not 
+             work/build (wrong paths to vcxproj files)
+[UPAC-608] - [ ETA package 3.0] Fix dictionaries used by VAConsumer and 
+             WatchlistConsumer are missing
+
+--------------------------------
+eta3.0.0.L1.win.rrg
+eta3.0.0.L1.win-binaries.rrg
+--------------------------------
+
+- First release of the product
