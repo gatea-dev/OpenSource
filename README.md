@@ -1,2 +1,6 @@
 # OpenSource
-Open Source Stuff : Python, etc.
+Open Source Stuff : 
+
++ Python
++ Kafka
++ Refinitiv UPA / ETA
