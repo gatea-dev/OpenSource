@@ -1,0 +1,10 @@
+
+ZLIB="../lib64/libonload_zf_static.a ../../lib//libciul1.a"
+ZLIB+=" ../../lib/libstub.a"
+ZINC="-I../include"
+clear ;
+for EXE in zfsink zftcppingpong
+do
+   echo "gcc -o ~/${EXE} ${EXE}.c ${ZINC} ${ZLIB}"
+   gcc -o ~/${EXE} ${EXE}.c ${ZINC} ${ZLIB}
+done 

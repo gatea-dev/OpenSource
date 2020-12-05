@@ -1,0 +1,3 @@
+
+LIBS="../lib/libciul1.a -lrt -lpthread"
+gcc -o ~/efsink -I../include -g efsink.c utils.c ${LIBS}

@@ -7,3 +7,4 @@ Open Source Stuff :
 + curl
 + Bloomberg BLPAPI
 + Refinitiv UPA / ETA
++ SolarFlare
