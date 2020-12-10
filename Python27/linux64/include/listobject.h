@@ -41,7 +41,7 @@ typedef struct {
 PyAPI_DATA(PyTypeObject) PyList_Type;
 
 #define PyList_Check(op) \
-    PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LIST_SUBCLASS)
+		PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_LIST_SUBCLASS)
 #define PyList_CheckExact(op) (Py_TYPE(op) == &PyList_Type)
 
 PyAPI_FUNC(PyObject *) PyList_New(Py_ssize_t size);
@@ -61,6 +61,8 @@ PyAPI_FUNC(PyObject *) _PyList_Extend(PyListObject *, PyObject *);
 #define PyList_GET_ITEM(op, i) (((PyListObject *)(op))->ob_item[i])
 #define PyList_SET_ITEM(op, i, v) (((PyListObject *)(op))->ob_item[i] = (v))
 #define PyList_GET_SIZE(op)    Py_SIZE(op)
+
+PyAPI_FUNC(void) _PyList_DebugMallocStats(FILE *out);
 
 #ifdef __cplusplus
 }
