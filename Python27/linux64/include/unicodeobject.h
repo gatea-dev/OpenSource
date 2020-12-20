@@ -1406,8 +1406,6 @@ PyAPI_FUNC(int) _PyUnicode_IsAlpha(
     Py_UNICODE ch       /* Unicode character */
     );
 
-PyAPI_FUNC(void) _PyUnicode_DebugMallocStats(FILE *out);
-
 #ifdef __cplusplus
 }
 #endif

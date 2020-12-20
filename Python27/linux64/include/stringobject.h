@@ -204,8 +204,6 @@ PyAPI_FUNC(PyObject *) _PyBytes_FormatAdvanced(PyObject *obj,
 					       char *format_spec,
 					       Py_ssize_t format_spec_len);
 
-PyAPI_FUNC(void) _PyString_DebugMallocStats(FILE *out);
-
 #ifdef __cplusplus
 }
 #endif

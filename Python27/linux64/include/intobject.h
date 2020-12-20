@@ -75,8 +75,6 @@ PyAPI_FUNC(PyObject *) _PyInt_FormatAdvanced(PyObject *obj,
 					     char *format_spec,
 					     Py_ssize_t format_spec_len);
 
-PyAPI_FUNC(void) _PyInt_DebugMallocStats(FILE *out);
-
 #ifdef __cplusplus
 }
 #endif
