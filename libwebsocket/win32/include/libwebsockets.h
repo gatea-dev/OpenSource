@@ -88,8 +88,12 @@ typedef unsigned long long lws_intptr_t;
 #define WIN32_LEAN_AND_MEAN
 #endif
 
+/*
+ * 21-10-11 jcs
+ *
 #include <winsock2.h>
 #include <ws2tcpip.h>
+ */
 #include <stddef.h>
 #include <basetsd.h>
 #include <io.h>
