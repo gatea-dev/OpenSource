@@ -64,8 +64,7 @@ extern "C" {
  *  - Producer
  *  - Idempotent Producer
  *  - Transactional Producer
- *  - Low-level consumer
- *  - High-level balanced consumer groups with offset commits
+ *  - Low-level consumer with offset commits (no consumer groups)
  *  - Topic Metadata and auto creation
  *
  * @remark High-level consumers making use of the balanced consumer groups
@@ -130,14 +129,6 @@ rd_kafka_mock_cluster_bootstraps (const rd_kafka_mock_cluster_t *mcluster);
 
 
 /**
- * @brief Clear the cluster's error state for the given \p ApiKey.
- */
-RD_EXPORT
-void rd_kafka_mock_clear_request_errors (rd_kafka_mock_cluster_t *mcluster,
-                                         int16_t ApiKey);
-
-
-/**
  * @brief Push \p cnt errors in the \p ... va-arg list onto the cluster's
  *        error stack for the given \p ApiKey.
  *
@@ -146,10 +137,6 @@ void rd_kafka_mock_clear_request_errors (rd_kafka_mock_cluster_t *mcluster,
  * The following \p cnt protocol requests matching \p ApiKey will fail with the
  * provided error code and removed from the stack, starting with
  * the first error code, then the second, etc.
- *
- * Passing \c RD_KAFKA_RESP_ERR__TRANSPORT will make the mock broker
- * disconnect the client which can be useful to trigger a disconnect on certain
- * requests.
  */
 RD_EXPORT
 void rd_kafka_mock_push_request_errors (rd_kafka_mock_cluster_t *mcluster,
@@ -157,36 +144,14 @@ void rd_kafka_mock_push_request_errors (rd_kafka_mock_cluster_t *mcluster,
 
 
 /**
- * @brief Same as rd_kafka_mock_push_request_errors() but takes
- *        an array of errors.
- */
-RD_EXPORT void
-rd_kafka_mock_push_request_errors_array (rd_kafka_mock_cluster_t *mcluster,
-                                         int16_t ApiKey,
-                                         size_t cnt,
-                                         const rd_kafka_resp_err_t *errors);
-
-
-/**
- * @brief Push \p cnt errors and RTT tuples in the \p ... va-arg list onto
- *        the broker's error stack for the given \p ApiKey.
- *
- * \p ApiKey is the Kafka protocol request type, e.g., ProduceRequest (0).
- *
- * Each entry is a tuple of:
- *   rd_kafka_resp_err_t err - error to return (or 0)
- *   int rtt_ms              - response RTT/delay in milliseconds (or 0)
- *
- * The following \p cnt protocol requests matching \p ApiKey will fail with the
- * provided error code and removed from the stack, starting with
- * the first error code, then the second, etc.
+ * @brief Same as rd_kafka_mock_push_request_errors() but for a specific broker.
  *
  * @remark The broker errors take precedence over the cluster errors.
  */
 RD_EXPORT rd_kafka_resp_err_t
-rd_kafka_mock_broker_push_request_error_rtts (rd_kafka_mock_cluster_t *mcluster,
-                                              int32_t broker_id,
-                                              int16_t ApiKey, size_t cnt, ...);
+rd_kafka_mock_broker_push_request_errors (rd_kafka_mock_cluster_t *mcluster,
+                                          int32_t broker_id,
+                                          int16_t ApiKey, size_t cnt, ...);
 
 
 /**
@@ -220,8 +185,7 @@ rd_kafka_mock_topic_create (rd_kafka_mock_cluster_t *mcluster,
  *
  * The topic will be created if it does not exist.
  *
- * \p broker_id needs to be an existing broker, or -1 to make the
- * partition leader-less.
+ * \p broker_id needs to be an existing broker.
  */
 RD_EXPORT rd_kafka_resp_err_t
 rd_kafka_mock_partition_set_leader (rd_kafka_mock_cluster_t *mcluster,
