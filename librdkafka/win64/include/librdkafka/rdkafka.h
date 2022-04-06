@@ -70,7 +70,7 @@ typedef SSIZE_T ssize_t;
 #define RD_DEPRECATED __declspec(deprecated)
 #define RD_FORMAT(...)
 #undef RD_EXPORT
-#ifdef LIBRDKAFKA_STATICLIB
+#if 1 // #ifdef LIBRDKAFKA_STATICLIB
 #define RD_EXPORT
 #else
 #ifdef LIBRDKAFKA_EXPORTS

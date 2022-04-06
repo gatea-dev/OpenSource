@@ -66,7 +66,7 @@ typedef SSIZE_T ssize_t;
 #endif
 #endif
 #undef RD_EXPORT
-#ifdef LIBRDKAFKA_STATICLIB
+#if 1 // #ifdef LIBRDKAFKA_STATICLIB
 #define RD_EXPORT
 #else
 #ifdef LIBRDKAFKACPP_EXPORTS
