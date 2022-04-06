@@ -80,13 +80,8 @@ typedef unsigned long long lws_intptr_t;
 #define WIN32_LEAN_AND_MEAN
 #endif
 
-/*
- * 21-10-21 jcs
- *
 #include <winsock2.h>
 #include <ws2tcpip.h>
- */
-#include <winsock.h>
 #include <stddef.h>
 #include <basetsd.h>
 #include <io.h>
@@ -575,28 +570,6 @@ struct lws_tokens;
 struct lws_vhost;
 struct lws;
 
-/* begin jcs */
-
-typedef unsigned short in_port_t;
-
-/* 128-bit IP6 address */
-struct in6_addr {
-	union {
-		uint8_t	  u6_addr8[16];
-		uint16_t  u6_addr16[8];
-		uint32_t  u6_addr32[4];
-	};
-};
-
-struct sockaddr_in6 {
-	sa_family_t	sin6_family;	/* AF_INET6 */
-	in_port_t	sin6_port;	/* Transport layer port # */
-	uint32_t	sin6_flowinfo;	/* IP6 flow information */
-	struct in6_addr	sin6_addr;	/* IP6 address */
-	uint32_t	sin6_scope_id;	/* scope zone index */
-};
-
-/* end jcs */
 #include <libwebsockets/lws-dll2.h>
 #include <libwebsockets/lws-map.h>
 
@@ -703,7 +676,6 @@ struct sockaddr_in6 {
 #include <libwebsockets/lws-ili9341-spi.h>
 #include <libwebsockets/lws-settings.h>
 #include <libwebsockets/lws-netdev.h>
-
 
 #ifdef __cplusplus
 }
