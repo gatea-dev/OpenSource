@@ -10,13 +10,13 @@ extern "C" {
 #endif
 
   typedef enum {
-    LOG_ALL = 0,
-    LOG_DEBUG = 1,
-    LOG_INFO = 2,
-    LOG_WARN = 3,
-    LOG_ERROR = 4,
-    LOG_PANIC = 5,
-    LOG_NONE = 6
+    FSLOG_ALL = 0,
+    FSLOG_DEBUG = 1,
+    FSLOG_INFO = 2,
+    FSLOG_WARN = 3,
+    FSLOG_ERROR = 4,
+    FSLOG_PANIC = 5,
+    FSLOG_NONE = 6
   } LogMessage_LogLevel;
 
   typedef struct LogMessageHandle LogMessage;
